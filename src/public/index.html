@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banao API Collection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .api-category {
+            margin-bottom: 40px;
+        }
+        .api-endpoint {
+            margin-bottom: 20px;
+        }
+        .code {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            white-space: pre-wrap;
+        }
+        .url {
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <h1>Banao API Collection</h1>
+
+    <div class="api-category">
+        <h2>User</h2>
+
+        <div class="api-endpoint">
+            <h3>Register</h3>
+            <p><strong>Method:</strong> POST</p>
+            <p><strong>URL:</strong> <span class="url">{{server}}/user/register</span></p>
+            <p><strong>Body:</strong></p>
+            <div class="code">
+{
+    "username": "aniket2",
+    "email": "aniket2@gmail.com",
+    "password": "verysecret"
+}
+            </div>
+        </div>
+
+        <div class="api-endpoint">
+            <h3>Login</h3>
+            <p><strong>Method:</strong> POST</p>
+            <p><strong>URL:</strong> <span class="url">{{server}}/user/login</span></p>
+            <p><strong>Body:</strong></p>
+            <div class="code">
+{
+    "email": "aniket2@gmail.com",
+    "password": "verysecret"
+}
+            </div>
+        </div>
+
+        <div class="api-endpoint">
+            <h3>Forget Password</h3>
+            <p><strong>Method:</strong> POST</p>
+            <p><strong>URL:</strong> <span class="url">{{server}}/user/forget-password</span></p>
+            <p><strong>Body:</strong></p>
+            <div class="code">
+{
+    "email": "aniket2@gmail.com",
+    "newPassword": "verysecret"
+}
+            </div>
+        </div>
+    </div>
+
+    <div class="api-category">
+        <h2>Posts</h2>
+
+        <div class="api-endpoint">
+            <h3>Create Post</h3>
+            <p><strong>Method:</strong> POST</p>
+            <p><strong>URL:</strong> <span class="url">{{server}}/posts/</span></p>
+            <p><strong>Body:</strong></p>
+            <div class="code">
+{
+    "content": "Hello World ffffff!"
+}
+            </div>
+        </div>
+
+        <div class="api-endpoint">
+            <h3>Toggle Like Post</h3>
+            <p><strong>Method:</strong> POST</p>
+            <p><strong>URL:</strong> <span class="url">{{server}}/posts/6770b34222d9887a99de7203/like</span></p>
+        </div>
+
+        <div class="api-endpoint">
+            <h3>Add Comment</h3>
+            <p><strong>Method:</strong> POST</p>
+            <p><strong>URL:</strong> <span class="url">{{server}}/posts/6770b34222d9887a99de7203/comment</span></p>
+            <p><strong>Body:</strong></p>
+            <div class="code">
+{
+    "text": "Bye!"
+}
+            </div>
+        </div>
+
+        <div class="api-endpoint">
+            <h3>Get All Posts</h3>
+            <p><strong>Method:</strong> GET</p>
+            <p><strong>URL:</strong> <span class="url">{{server}}/posts/</span></p>
+        </div>
+
+        <div class="api-endpoint">
+            <h3>Update Post</h3>
+            <p><strong>Method:</strong> PUT</p>
+            <p><strong>URL:</strong> <span class="url">{{server}}/posts/6770c300ed031b64c3a5c5d4</span></p>
+            <p><strong>Body:</strong></p>
+            <div class="code">
+{
+    "content": "The content is Changed!"
+}
+            </div>
+        </div>
+
+        <div class="api-endpoint">
+            <h3>Delete Post</h3>
+            <p><strong>Method:</strong> DELETE</p>
+            <p><strong>URL:</strong> <span class="url">{{server}}/posts/6770b31e0bb681baffcf4690</span></p>
+        </div>
+    </div>
+</body>
+</html>
