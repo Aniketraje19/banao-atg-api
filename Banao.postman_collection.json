@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "a2fed9d1-412a-4368-9ac3-b20a2f21f971",
+		"name": "Banao",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33566909"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"aniket2\",\r\n    \"email\":\"aniket2@gmail.com\",\r\n    \"password\":\"verysecret\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/user/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"aniket2@gmail.com\",\r\n    \"password\":\"verysecret\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/user/login"
+					},
+					"response": []
+				},
+				{
+					"name": "forget password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"aniket2@gmail.com\",\r\n    \"newPassword\":\"verysecret\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/user/forget-password"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "create post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NzA5ZGI5NTcwYTM4OWVmYTVkZTk1MSIsImVtYWlsIjoiYW5pa2V0MkBnbWFpbC5jb20iLCJpYXQiOjE3MzU0MzgxMjgsImV4cCI6MTczNTUyNDUyOH0.mv65ysXZpydY-qvk0t7YWJ_NlROu6nRchq7sECOU3iY"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\":\"Hello World ffffff!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/posts/"
+					},
+					"response": []
+				},
+				{
+					"name": "toggle like post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NzA5ZGI5NTcwYTM4OWVmYTVkZTk1MSIsImVtYWlsIjoiYW5pa2V0MkBnbWFpbC5jb20iLCJpYXQiOjE3MzU0MzgxMjgsImV4cCI6MTczNTUyNDUyOH0.mv65ysXZpydY-qvk0t7YWJ_NlROu6nRchq7sECOU3iY"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/posts/6770b34222d9887a99de7203/like"
+					},
+					"response": []
+				},
+				{
+					"name": "add comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NzA5ZGI5NTcwYTM4OWVmYTVkZTk1MSIsImVtYWlsIjoiYW5pa2V0MkBnbWFpbC5jb20iLCJpYXQiOjE3MzU0MzgxMjgsImV4cCI6MTczNTUyNDUyOH0.mv65ysXZpydY-qvk0t7YWJ_NlROu6nRchq7sECOU3iY"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\":\"Bye!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/posts/6770b34222d9887a99de7203/comment"
+					},
+					"response": []
+				},
+				{
+					"name": "get all posts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": ""
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{server}}/posts/"
+					},
+					"response": []
+				},
+				{
+					"name": "update post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NzA5ZGI5NTcwYTM4OWVmYTVkZTk1MSIsImVtYWlsIjoiYW5pa2V0MkBnbWFpbC5jb20iLCJpYXQiOjE3MzU0MzgxMjgsImV4cCI6MTczNTUyNDUyOH0.mv65ysXZpydY-qvk0t7YWJ_NlROu6nRchq7sECOU3iY"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\":\"The content is Changed!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/posts/6770c300ed031b64c3a5c5d4"
+					},
+					"response": []
+				},
+				{
+					"name": "delete post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NzA5ZGI5NTcwYTM4OWVmYTVkZTk1MSIsImVtYWlsIjoiYW5pa2V0MkBnbWFpbC5jb20iLCJpYXQiOjE3MzU0MzgxMjgsImV4cCI6MTczNTUyNDUyOH0.mv65ysXZpydY-qvk0t7YWJ_NlROu6nRchq7sECOU3iY"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{server}}/posts/6770b31e0bb681baffcf4690"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
