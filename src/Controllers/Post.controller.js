@@ -124,7 +124,7 @@ const comment = asyncHandler(async (req,res)=>{
 
     post.comments.push({user:req.user._id,text})
 
-    const savedPost = post.save();
+    const savedPost = await post.save();
 
     if(!savedPost){
         throw new ApiError(500,"internal server error!")
