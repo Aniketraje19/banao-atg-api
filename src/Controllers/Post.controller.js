@@ -21,6 +21,22 @@ const AllPosts = asyncHandler(async (req,res)=>{
     return res.status(200).json(new ApiResponse(200,posts,"All Posts feteched successfully!"))
 })
 
+const getPostById = asyncHandler(async (req,res)=>{
+    
+    try{
+        const post = await Post.findById(req.params.id).populate("author","username").populate("comments.user", "username")
+        if(!post){
+            throw new ApiError(404,"Post not found!")
+        }
+    
+        return res.status(200).json(new ApiResponse(200,post,"Post feteched Successfully!"))
+    }catch(err){
+        throw new ApiError(404,"Invalid Post Id")
+    }
+    
+
+})
+
 const updatePost = asyncHandler(async (req,res)=>{
 
     const {content} = req.body
@@ -30,6 +46,7 @@ const updatePost = asyncHandler(async (req,res)=>{
     }
 
     const post = await Post.findById(req.params.id)
+
     if(!post){
         throw new ApiError(404,"Post not found!")
     }
@@ -117,4 +134,4 @@ const comment = asyncHandler(async (req,res)=>{
 
 })
 
-export {createPost,AllPosts,updatePost,deletePost,likePost,comment}
+export {createPost,AllPosts,updatePost,deletePost,likePost,comment,getPostById}

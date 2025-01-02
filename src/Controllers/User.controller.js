@@ -56,7 +56,7 @@ const login = asyncHandler(async (req,res)=>{
 
     const token = jwt.sign({id:user._id,email:user.email},process.env.TOKEN_SECRET,{expiresIn:"1d"})
 
-    res.status(200).json(new ApiResponse(200,{token},"User Logged In Successfully!"))
+    res.status(200).json(new ApiResponse(200,{id:user._id,username:user.username,email:user.email,token},"User Logged In Successfully!"))
 
 })
 
